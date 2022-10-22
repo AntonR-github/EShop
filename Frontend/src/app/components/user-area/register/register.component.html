@@ -1,0 +1,70 @@
+<div class="container">
+    <div class="details-1">
+        <app-title title="Register"></app-title>
+        <form [formGroup]="registerForm" (ngSubmit)="submit()">
+            <text-input
+             [control]="fc.userID"
+             [showErrorsWhen]="isSubmitted"
+             label="ID/Passport"
+            ></text-input>
+            <text-input
+             [control]="fc.email"
+             [showErrorsWhen]="isSubmitted"
+             label="Email"
+            ></text-input>
+            <text-input
+             [control]="fc.password"
+             [showErrorsWhen]="isSubmitted"
+             label="Password"
+            ></text-input>
+            <text-input
+             [control]="fc.confirmPassword"
+             [showErrorsWhen]="isSubmitted"
+             label="Confirm Password"
+            ></text-input>
+
+            <button class="step-2" (click)="toggleComponent()">Next Step</button>
+
+            <div class="details-2" *ngIf="!isHidden">
+
+            <label>Select City</label>
+            <select formControlName="city" class="city-select" required>
+                <option value="haifa">Haifa</option>
+                <option value="tel-aviv">Tel-Aviv</option>
+                <option value="jerusalem">Jerusalem</option>
+                <option value="beer-sheva">Beer-Sheva</option>
+                <option value="ashdod">Ashdod</option>
+                <option value="netanya">Netanya</option>
+                <option value="petah-tikva">Petah-Tikva</option>
+                <option value="bnei-brak">Bnei-Brak</option>
+                <option value="rishon-lezion">Rishon-Lezion</option>
+                <option value="holon">Holon</option>
+
+            </select>
+            <text-input
+            [control]="fc.street"
+            [showErrorsWhen]="isSubmitted"
+            label="Street"
+           ></text-input>
+           <text-input
+           [control]="fc.firstName"
+           [showErrorsWhen]="isSubmitted"
+           label="First Name"
+          ></text-input>
+          <text-input
+          [control]="fc.lastName"
+          [showErrorsWhen]="isSubmitted"
+          label="Last Name"
+         ></text-input>
+     <default-button text="Register"></default-button>
+    </div>
+    <div class="login">
+        Already a user? &nbsp;
+        <a routerLink="/login" [queryParams]="{returnUrl: returnUrl}">
+        Login Here
+    </a>
+    </div>
+        </form>
+        
+    </div>
+</div>

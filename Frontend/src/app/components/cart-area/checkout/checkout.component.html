@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="content">
+        <app-title title="Order Form" fontSize="1.6rem"></app-title>
+        <form [formGroup]="checkoutForm">
+            <label>Select City</label>
+            <select formControlName="city" class="city-select" required>
+                <option value="haifa">Haifa</option>
+                <option value="tel-aviv">Tel-Aviv</option>
+                <option value="jerusalem">Jerusalem</option>
+                <option value="beer-sheva">Beer-Sheva</option>
+                <option value="ashdod">Ashdod</option>
+                <option value="netanya">Netanya</option>
+                <option value="petah-tikva">Petah-Tikva</option>
+                <option value="bnei-brak">Bnei-Brak</option>
+                <option value="rishon-lezion">Rishon-Lezion</option>
+                <option value="holon">Holon</option>
+            </select>
+            <text-input [control]="fc.street" label="Street"></text-input>
+            Shipment Date: <input formControlName="date" type="date" class="date-select">
+        </form>
+        <app-order-items-list [order]="order"></app-order-items-list>
+    </div>
+    <div class="map">
+        <app-title title="Choose your Address On Map" fontSize="1.6rem"></app-title>
+       <app-map [order]="order" ></app-map>
+    </div>
+    <div class="button-container">
+        <div class="buttons">
+            <button (click)="createOrder()">Go to payment</button>
+        </div>
+    </div>
+</div>

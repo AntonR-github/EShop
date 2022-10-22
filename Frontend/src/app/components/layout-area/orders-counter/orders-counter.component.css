@@ -1,0 +1,9 @@
+.container{
+    padding: 0.5rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    color: #e72929;
+    font-weight: bold;
+}
+

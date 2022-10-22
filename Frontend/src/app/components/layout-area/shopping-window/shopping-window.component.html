@@ -1,0 +1,16 @@
+<div class="container">
+<div class="cart-info" *ngIf="cart.items.length >= 1">
+<span> Current Active Cart: </span><br>
+Price: {{cart.totalPrice | currency: 'USD': 'symbol':'1.2-2'}}<br>
+From Date: {{cart.date | date: 'short'}}<br>
+<button (click)="goToCart()">Continue With Purchase</button>
+</div>
+<div class="order-info" *ngIf="order && cart.items.length <= 0">
+<span> Your Last Purchase </span><br>
+Price: {{order.totalPrice | currency: 'USD': 'symbol':'1.2-2'}}<br>
+Delivery Date: {{order.date | date: 'short'}}
+</div>
+<div class="new-user" *ngIf="!order && cart.items.length <= 0">
+<span> New User? Welcome To Our Site </span><br>
+</div>
+</div>

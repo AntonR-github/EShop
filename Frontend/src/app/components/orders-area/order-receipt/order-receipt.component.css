@@ -1,0 +1,28 @@
+  .text-contaniner{
+    height: 70vh;
+    overflow-y: scroll;
+  }
+  .search-input{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  ::ng-deep .highlighted-text{
+    background-color: yellow;
+  }
+  .container{
+    display: flex;
+  }
+  button{
+    color: white;
+    background-color: #e72929;
+    border: none;
+    font-size: 1rem;
+    padding: 0.5rem;
+    border-radius: 10rem;
+    outline: none;
+}
+
+button:hover{
+    opacity: 0.9;
+    cursor: pointer;
+}

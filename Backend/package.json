@@ -1,0 +1,26 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "description": "Full Stack System",
+    "scripts": {
+        "start": "nodemon --exec ts-node src/app.ts"
+    },
+    "author": "Full Stack Course",
+    "license": "ISC",
+    "dependencies": {
+        "alert": "^5.1.1",
+        "bcryptjs": "^2.4.3",
+        "cors": "^2.8.5",
+        "express": "^4.17.3",
+        "express-async-handler": "^1.2.0",
+        "jsonwebtoken": "^8.5.1",
+        "mongoose": "^6.4.4",
+        "multer": "^1.4.5-lts.1"
+    },
+    "devDependencies": {
+        "@types/bcryptjs": "^2.4.2",
+        "@types/cors": "^2.8.12",
+        "@types/express": "^4.17.13",
+        "@types/node": "^18.0.0"
+    }
+}

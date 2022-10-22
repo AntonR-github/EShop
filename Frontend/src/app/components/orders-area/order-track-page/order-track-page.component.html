@@ -1,0 +1,23 @@
+<div class="container">
+ 
+    <div class="content" *ngIf="orders">
+      <div class="details" *ngFor="let order of orders">
+        <h1>Order #{{order._id}}</h1>
+        <div><strong>Delivery Date</strong> {{order.date | date:'medium'}}</div>
+        <div><strong>Address</strong> {{order.city}} , {{order.street}}</div>
+        <div><strong>Status</strong> {{order.orderStatus}}</div>
+        <div *ngIf="order.creditCard">
+          <strong>Payment ID</strong> {{order.creditCard}}
+          <a routerLink="/receipt/{{order._id}}">Download Receipt</a>
+          <app-order-items-list [order]="order"></app-order-items-list>
+        </div>
+      
+        <div>
+          <app-title title="Shipping Address"></app-title>
+          <app-map [order]="order" [readonly]="true"></app-map>
+        </div>
+      </div>
+        </div>
+      </div>
+  
+    

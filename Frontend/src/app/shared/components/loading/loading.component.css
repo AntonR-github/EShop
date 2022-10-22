@@ -1,0 +1,33 @@
+
+.container{
+    position: fixed;
+    width: 20%;
+    height: 20%;
+    z-index: 10000;
+    top: 40%;
+    left: 40%;
+}
+
+.details{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: center;
+    height: 80%;
+    width: 100%;
+}
+
+img{
+    border-radius: 50%;
+
+}
+
+h1{
+    color: blue;
+    font-size: 3rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+    text-transform: lowercase;
+    text-align: center;
+}

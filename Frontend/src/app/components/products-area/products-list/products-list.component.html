@@ -1,0 +1,41 @@
+<marquee behavior="" direction=""><app-orders-counter></app-orders-counter><app-products-counter></app-products-counter></marquee>
+
+
+<div class="notFound" *ngIf="!products || !products.length">
+    No Products Found
+</div>
+<div>
+    <div *ngIf="isAdmin === true">
+        <button class="button2" (click)="goToAddProduct()">Add Product</button>
+    </div>
+    <div class="search-container">
+        <div class="search-input">
+            <input type="text" placeholder="Search" [(ngModel)]="searchTerm" (keyup)="search()">
+        </div>
+        <div class="search-button">
+            <button (click)="search()">Search</button>
+        </div>
+    </div>
+    <select (change)="display($event)" class="select">
+        <option selected disabled>Select Products Category</option>
+        <option value="All">All</option>
+        <option *ngFor="let c of categories" [value]="c._id">{{c.categoryName}}</option>
+    </select>
+
+</div>
+
+<ul>
+    <li *ngFor="let product of products">
+        <a routerLink="/product/{{product._id}}">
+            <img [src]="product.imageUrl" [alt]="product.productName"/>
+            <div class="content">
+                <div class="name">
+                    {{product.productName}}
+                </div>
+                <div class="price">
+                    <span>{{product.price | currency}}</span>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>

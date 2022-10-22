@@ -1,0 +1,24 @@
+
+<div *ngIf="product" class="container">
+    <img [src]="product.imageUrl" [alt]="product.productName"/>
+
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{product.productName}}
+            </span>
+            <div class="categories">
+              
+                <div class="price">
+                    <span>
+                        {{product.price | currency}}
+                    </span>
+                </div>
+                <button (click)="addToCart()">Add To Cart</button>
+                <div *ngIf="isAdmin === true">
+                <a routerLink="/products/edit/{{product._id}}">Edit Product</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Quicksand&display=swap");
+@import '~ngx-toastr/toastr.css';
+
+*{
+    box-sizing: border-box;
+}
+
+html{
+    font-size: 16px;
+}
+
+html,
+button{
+    font-family: 'Quicksand', sans-serif;
+}
+
+body{
+    margin: 0;
+}
+
+a{
+    text-decoration: none;
+}
+

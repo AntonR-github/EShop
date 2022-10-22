@@ -1,0 +1,8 @@
+ <div class="partial-search">
+    <div class="search-input">
+      <label for="">Search Receipt: </label> <input [(ngModel)]="searchText" type="search">
+     </div>
+     <button (click)="downloadReceipt()">Download</button>
+     <div class="text-contaniner" [innerHtml]="receipt | highlighter:searchText:'partial'"  >
+     </div>
+  </div>
